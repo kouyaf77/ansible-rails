@@ -1,2 +1,9 @@
 remote_user: vagrant
 ruby_version: 2.2
+mysql_packages:
+  - mysql-server-5.6
+  - python-mysqldb
+imagemagick_packages:
+  - imagemagick
+  - libmagickcore-dev
+  - libmagickwand-dev

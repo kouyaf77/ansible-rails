@@ -1,7 +1,4 @@
 - name: Install Imagemagick
   action: apt pkg={{item}} state=latest
   sudo: yes
-  with_items:
-    - imagemagick
-    - libmagickcore-dev
-    - libmagickwand-dev
+  with_items: imagemagick_packages

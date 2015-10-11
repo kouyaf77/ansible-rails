@@ -1,0 +1,18 @@
+- name: MySQL | Make sure the MySQL packages are installed
+  action: apt pkg={{item}} state=latest
+  sudo: yes
+  with_items: mysql_packages
+
+- name: Set mysql service to start on boot
+  service: name=mysql state=started enabled=true
+
+- name: Set the root privileges
+  mysql_user:
+    user: root
+    host: '{{item}}'
+    password: ''
+  with_items:
+   - '%'
+   - 127.0.0.1
+   - ::1
+   - localhost
