@@ -1,2 +1,3 @@
 - include: apt_get_update.yml
 - include: rvm.yml
+- include: imagemagick.yml
