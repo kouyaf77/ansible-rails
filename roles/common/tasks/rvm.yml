@@ -1,6 +1,5 @@
 - name: Install RVM
-  shell: "curl -sSL https://get.rvm.io | bash"
+  shell: 'curl -sSL https://get.rvm.io | bash'
 
 - name: Install rubies
-  command: 'rvm install {{ruby_version}}'
-  sudo_user: '{{remote_user}}'
+  shell: /bin/bash -lc 'rvm install {{ruby_version}}'
