@@ -3,3 +3,4 @@
 - include: imagemagick.yml
 - include: mysql.yml
 - include: git.yml
+- include: nginx.yml
