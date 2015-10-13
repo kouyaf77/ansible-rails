@@ -16,3 +16,16 @@
    - 127.0.0.1
    - ::1
    - localhost
+
+- name: Copy my.cnf global MySQL configuration.
+  template:
+    src: my.cnf.j2
+    dest: /etc/mysql/my.cnf
+    owner: root
+    group: root
+    mode: 0644
+  sudo: yes
+
+- name: restart mysql
+  service: name=mysql state=restarted
+  sudo: yes
