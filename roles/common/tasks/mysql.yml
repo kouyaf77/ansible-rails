@@ -19,7 +19,7 @@
 
 - name: Copy my.cnf global MySQL configuration.
   template:
-    src: my.cnf.j2
+    src: mysql/my.cnf.j2
     dest: /etc/mysql/my.cnf
     owner: root
     group: root

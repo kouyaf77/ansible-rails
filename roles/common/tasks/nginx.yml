@@ -29,8 +29,17 @@
 
 - name: Put nginx.conf
   template:
-    src: nginx.conf.j2
+    src: nginx/nginx.conf.j2
     dest: /etc/nginx/nginx.conf
+    owner: root
+    group: root
+    mode: 0644
+  sudo: yes
+
+- name: Put default.conf
+  template:
+    src: nginx/default.conf.j2
+    dest: /etc/nginx/conf.d/default.conf
     owner: root
     group: root
     mode: 0644
