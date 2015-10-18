@@ -1,31 +1,25 @@
 - name: NGINX | Adding NGINX signing key
   apt_key: url=http://nginx.org/keys/nginx_signing.key state=present
-  sudo: yes
 
 - name: NGINX | Adding sources.list deb url for NGINX
   lineinfile: dest=/etc/apt/sources.list line='deb http://nginx.org/packages/mainline/ubuntu/ trusty nginx'
-  sudo: yes
 
 - name: NGINX Plus | Adding sources.list deb-src url for NGINX
   lineinfile: dest=/etc/apt/sources.list line='deb-src http://nginx.org/packages/mainline/ubuntu/ trusty nginx'
-  sudo: yes
 
 - name: NGINX | Updating apt cache
   apt:
     update_cache: yes
-  sudo: yes
 
 - name: NGINX | Installing NGINX
   apt:
     pkg: nginx
     state: latest
-  sudo: yes
 
 - name: NGINX | Starting NGINX
   service:
     name: nginx
     state: started
-  sudo: yes
 
 - name: Put nginx.conf
   template:
@@ -34,7 +28,6 @@
     owner: root
     group: root
     mode: 0644
-  sudo: yes
 
 - name: Put default.conf
   template:
@@ -43,8 +36,6 @@
     owner: root
     group: root
     mode: 0644
-  sudo: yes
 
 - name: Restart nginx
   service: name=nginx state=restarted
-  sudo: yes

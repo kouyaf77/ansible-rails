@@ -1,6 +1,5 @@
 - name: MySQL | Make sure the MySQL packages are installed
   action: apt pkg={{item}} state=latest
-  sudo: yes
   with_items: mysql_packages
 
 - name: Set mysql service to start on boot
@@ -24,8 +23,6 @@
     owner: root
     group: root
     mode: 0644
-  sudo: yes
 
 - name: restart mysql
   service: name=mysql state=restarted
-  sudo: yes
