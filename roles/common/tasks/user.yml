@@ -1,0 +1,8 @@
+- name: Create user
+  user:
+    name: deploy
+    password: ''
+    shell: /bin/bash
+    state: present
+    append: yes
+    groups: sudo

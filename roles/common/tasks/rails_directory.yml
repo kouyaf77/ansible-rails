@@ -1,0 +1,2 @@
+- name: Create directory for app
+  file: path=/usr/local/rails_apps/teech_link state=directory owner=deploy group=deploy mode=02775
