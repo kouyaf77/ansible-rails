@@ -1,5 +1,11 @@
+- name: Import GPG keys
+  shell: 'gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3'
+  sudo: no
+
 - name: Install RVM
-  shell: 'curl -sSL https://get.rvm.io | bash'
+  shell: 'curl -sSL https://get.rvm.io | bash -s stable'
+  sudo: no
 
 - name: Install rubies
-  shell: /bin/bash -lc 'rvm install {{ruby_version}}'
+  shell: bash -lc 'rvm install {{ruby_version}}'
+  sudo: no
