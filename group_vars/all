@@ -3,6 +3,7 @@ ruby_version: 2.2
 mysql_packages:
   - mysql-server-5.6
   - python-mysqldb
+  - libmysqlclient-dev
 imagemagick_packages:
   - imagemagick
   - libmagickcore-dev
