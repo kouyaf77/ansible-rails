@@ -6,3 +6,6 @@
     state: present
     append: yes
     groups: sudo
+
+- name: Nopassword
+  lineinfile: "dest=/etc/sudoers backup=yes state=present regexp='^deploy' line='deploy ALL=(ALL) NOPASSWD: ALL'"
