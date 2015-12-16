@@ -2,6 +2,7 @@
 - include: user.yml
 - include: rails_directory.yml
 - include: rvm.yml
+- include: redis.yml
 - include: imagemagick.yml
 - include: mysql.yml
 - include: git.yml

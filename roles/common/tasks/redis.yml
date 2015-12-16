@@ -1,0 +1,7 @@
+- name: Install redis
+  apt: name=redis-server state=latest
+  sudo: yes
+
+- name: Start redis service
+  service: name=redis-server state=started
+  sudo: yes
